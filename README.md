@@ -1,8 +1,6 @@
 # 🖼️ Python Avatar Automation
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white) 
-![Issues](https://img.shields.io/github/issues/yourusername/python-avatar-automation) 
-![Stars](https://img.shields.io/github/stars/yourusername/python-avatar-automation?style=social)
 
 Automate Roblox avatar updates effortlessly using Python. Manage your avatar, outfits, and accessories programmatically — all in one lightweight tool!
 

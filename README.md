@@ -2,25 +2,24 @@
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white) 
 
-Automate Roblox avatar updates effortlessly using Python. Manage your avatar, outfits, and accessories programmatically — all in one lightweight tool!
+Automate Roblox avatar outfit changes with Python! This script cycles through your favorite outfits automatically every hour using your Roblox cookie.
 
 ---
 
 ## ✨ Features
 
-- 🟢 Log in securely using your Roblox cookies  
-- 🟢 Automatically update avatar outfits  
-- 🟢 Fetch and display current avatar items  
-- 🟢 Lightweight, easy-to-use, fully Python-based  
-- 🟢 Ready for extensions and custom automation  
+- 🟢 Log in securely using your Roblox `.ROBLOSECURITY` cookie  
+- 🟢 Automatically cycle through multiple outfits  
+- 🟢 Works continuously every hour  
+- 🟢 Lightweight and easy to set up  
 
 ---
 
 ## 🚀 Tech Stack
 
 - **Python 3.x**  
-- **Libraries:** `requests`, `BeautifulSoup4` (`bs4`), `json`  
-- **Cross-platform:** Windows, Linux, macOS  
+- **Libraries:** `requests`  
+- **Platform:** Cross-platform (Windows, Linux, macOS)  
 
 ---
 
@@ -32,37 +31,59 @@ git clone https://github.com/yourusername/python-avatar-automation.git
 cd python-avatar-automation
 
 # Install dependencies
-pip install -r requirements.txt
+pip install requests
 
 🔑 Setup Your Roblox Cookie
 
-    Create a file named cookie.txt in the project root
+    Create a file named cookie.txt in the project root.
 
-    Paste your Roblox .ROBLOSECURITY cookie inside it
+    Paste your Roblox .ROBLOSECURITY cookie inside the file.
 
-    ⚠️ Keep this file private! Sharing it can compromise your account.
+    Save the file.
+
+    ⚠️ Keep this cookie private! Sharing it can compromise your account.
+
+🛠️ Configure Outfits
+
+    Open avatar_automation.py (or your script file).
+
+    Replace the IDs in the OUTFITS list with your desired Roblox outfit IDs:
+
+OUTFITS = [123456789, 987654321]  # Replace with your Outfit IDs
 
 🖥️ Usage
 
+Run the script:
+
 python avatar_automation.py
 
-Follow the on-screen prompts to:
+    The script will log in using your cookie
 
-    Update your avatar outfits
+    It will automatically cycle through the outfits you configured
 
-    Fetch your current avatar items
+    Waits 1 hour between outfit changes
 
-    Automate avatar changes
+Example console output:
 
-    💡 Tip: You can schedule this script with Windows Task Scheduler or cron for automatic updates.
+✅ Logged in as: YourUsername (UserId: 123456)
+✅ Changed outfit to 123456789
+⏳ Waiting 1 hour...
+✅ Changed outfit to 987654321
+⏳ Waiting 1 hour...
+
+⏱️ Automation Notes
+
+    The script uses an infinite loop to cycle outfits every hour
+
+    You can adjust the interval by changing time.sleep(3600) (3600 seconds = 1 hour)
 
 🎨 Customization
 
-    Change outfits programmatically
+    Add as many outfit IDs as you want
 
-    Add favorite items or accessories
+    Adjust the timing interval to your preference
 
-    Extend the script to include custom automation features
+    Combine with task schedulers (Windows Task Scheduler, cron) for advanced automation
 
 🤝 Contributing
 

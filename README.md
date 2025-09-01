@@ -1,9 +1,6 @@
 # 🖼️ Python Avatar Automation
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white) 
-![GitHub License](https://img.shields.io/github/license/yourusername/python-avatar-automation) 
-![Issues](https://img.shields.io/github/issues/yourusername/python-avatar-automation) 
-![Stars](https://img.shields.io/github/stars/yourusername/python-avatar-automation?style=social)
 
 Automate Roblox avatar outfit changes with Python! This script cycles through your favorite outfits automatically every hour using your Roblox cookie.
 

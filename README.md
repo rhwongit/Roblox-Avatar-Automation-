@@ -1,98 +1,128 @@
-# 🖼️ Python Avatar Automation
+# 🎭 Roblox Avatar Automation
 
-![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white) 
+[![Python](https://img.shields.io/badge/Python-3.x-blue.svg?logo=python)](https://www.python.org/)
+[![Requests](https://img.shields.io/badge/Library-requests-green.svg)](https://pypi.org/project/requests/)
+[![Roblox](https://img.shields.io/badge/Platform-Roblox-red.svg?logo=roblox)](https://www.roblox.com)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
 
-Automate Roblox avatar outfit changes with Python! This script cycles through your favorite outfits automatically every hour using your Roblox cookie.
+Automatically cycle through your Roblox outfits using Python.  
+This script changes your avatar every hour so you always look fresh without lifting a finger.
 
 ---
 
 ## ✨ Features
-
-- 🟢 Log in securely using your Roblox `.ROBLOSECURITY` cookie  
-- 🟢 Automatically cycle through multiple outfits  
-- 🟢 Works continuously every hour  
-- 🟢 Lightweight and easy to set up  
+- 🔐 Secure login with your Roblox **.ROBLOSECURITY** cookie  
+- 👕 Rotate through multiple outfits automatically  
+- ⚡ Lightweight, runs continuously in the background  
+- 💻 Works on Windows, Linux, and macOS  
 
 ---
 
-## 🚀 Tech Stack
-
-- **Python 3.x**  
-- **Libraries:** `requests`  
-- **Platform:** Cross-platform (Windows, Linux, macOS)  
+## 🛠️ Tech Stack
+- 🐍 Python 3.x  
+- 📦 `requests` library  
+- 🌍 Cross-platform  
 
 ---
 
 ## 📦 Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/python-avatar-automation.git
-cd python-avatar-automation
+# Clone this repository
+git clone https://github.com/yourusername/roblox-avatar-automation.git
+cd roblox-avatar-automation
 
 # Install dependencies
 pip install requests
 
-🔑 Setup Your Roblox Cookie
+🔑 Setup
+Step 1 — Get Your Roblox Cookie
 
-    Create a file named cookie.txt in the project root.
+    Open Roblox
 
-    Paste your Roblox .ROBLOSECURITY cookie inside the file.
+and log in.
 
-    Save the file.
+Press F12 (Developer Tools) → Network tab.
 
-    ⚠️ Keep this cookie private! Sharing it can compromise your account.
+Refresh the page.
 
-🛠️ Configure Outfits
+Click on any request to roblox.com.
 
-    Open avatar_automation.py (or your script file).
+Under Request Headers, find:
 
-    Replace the IDs in the OUTFITS list with your desired Roblox outfit IDs:
+    Cookie: .ROBLOSECURITY=YOUR_COOKIE_HERE
 
-OUTFITS = [123456789, 987654321]  # Replace with your Outfit IDs
+    Copy everything after =.
 
-🖥️ Usage
+    Create a file called cookie.txt in the project root and paste your cookie.
+
+⚠️ Keep this cookie private — leaking it means losing your account.
+
+📸 Example:
+Step 2 — Configure Outfits
+
+Edit avatar_automation.py and update the outfit IDs:
+
+OUTFITS = [
+    1234567890123456,  # Streetwear
+    9876543210987654,  # Samurai
+    1928374655647382,  # Classic Suit
+    5647382910123456   # Casual Hoodie
+]
+
+📸 Example:
+▶️ Usage
 
 Run the script:
 
 python avatar_automation.py
 
-    The script will log in using your cookie
+It will:
 
-    It will automatically cycle through the outfits you configured
+    ✅ Log in with your cookie
 
-    Waits 1 hour between outfit changes
+    👕 Switch outfits one by one
 
-Example console output:
+    ⏱️ Wait 1 hour before changing again
 
-✅ Logged in as: YourUsername (UserId: 123456)
-✅ Changed outfit to 123456789
+Sample output:
+
+Logged in as: YourUsername (UserId: 123456)
+Changed outfit to 1234567890123456 (Streetwear)
 ⏳ Waiting 1 hour...
-✅ Changed outfit to 987654321
+Changed outfit to 9876543210987654 (Samurai)
 ⏳ Waiting 1 hour...
 
-⏱️ Automation Notes
+⏱️ Notes
 
-    The script uses an infinite loop to cycle outfits every hour
+    Default interval = 1 hour (time.sleep(3600))
 
-    You can adjust the interval by changing time.sleep(3600) (3600 seconds = 1 hour)
+    Adjust freely for shorter/longer waits
+
+    For automation:
+
+        ⏺️ Use Windows Task Scheduler
+
+        ⏺️ Or cron jobs on Linux/macOS
 
 🎨 Customization
 
-    Add as many outfit IDs as you want
+    Add/remove outfit IDs
 
-    Adjust the timing interval to your preference
+    Change interval timing
 
-    Combine with task schedulers (Windows Task Scheduler, cron) for advanced automation
+    Extend with more features (randomizer, alerts, etc.)
 
 🤝 Contributing
 
 Contributions are welcome!
 
-    Fork the repository
+    Fork this repo
 
-    Create a feature branch: git checkout -b feature-name
+    Create a feature branch (git checkout -b feature-name)
 
-    Make your changes
+    Commit and push
 
-    Push and submit a pull request
+    Open a pull request
+
+✨ Stay stylish, automatically! ✨

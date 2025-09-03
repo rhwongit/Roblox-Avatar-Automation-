@@ -1,132 +1,120 @@
-# 🎮 Roblox Avatar Automation
+# 🎭 Roblox Avatar Automation
 
-Automate your Roblox avatar outfit changes effortlessly with Python. Keep your avatar looking fresh by cycling through your favorite outfits automatically!
+[![Python](https://img.shields.io/badge/Python-3.x-blue.svg?logo=python)](https://www.python.org/) 
+[![Requests](https://img.shields.io/badge/Library-requests-green.svg)](https://pypi.org/project/requests/) 
+[![Roblox](https://img.shields.io/badge/Platform-Roblox-red.svg?logo=roblox)](https://www.roblox.com)
+
+Automate your Roblox avatar with Python! This script **cycles through your saved outfits**, handles errors automatically, and only wears outfits that are truly wearable.
 
 ---
 
 ## ✨ Features
 
-* 🔒 **Secure login** using your Roblox `.ROBLOSECURITY` cookie
-* 👕 **Automatic outfit rotation**
-* ⚡ **Lightweight** and runs continuously in the background
-* 💻 **Cross-platform**: Windows, Linux, macOS
+- 🔐 Secure login using your `.ROBLOSECURITY` cookie
+- 👕 Automatically cycle through editable outfits
+- ⚡ Skips outfits that fail to wear and logs failures
+- 📄 Generates `failed_outfits.log` with all outfits that couldn’t be worn
+- ⏱️ Adjustable interval (default: 10 minutes)
+- 💻 Cross-platform: Windows, Linux, macOS
+
+---
+
+## 🖼️ Sample Output
+
+**Console Output:**
+
+✅ Logged in as: TERMINATORR60 (UserId: 4755568233)
+✨ Found 8 editable outfits.
+✅ Wore outfit: Supreme (ID: 3213680585124979)
+⚠️ Could not wear outfit 'Tokyo 10' (ID: 2721320690592434, status 404)
+⏳ Waiting 10 minutes before next outfit...
+
+
+**Failed Outfits Log (`failed_outfits.log`):**
+
+Tue Sep 3 13:45:12 2025 - Failed to wear: Tokyo 10 (ID: 2721320690592434), Status: 404
+Tue Sep 3 13:55:18 2025 - Failed to wear: BPM Black (ID: 2719305988962447), Status: 404
+
+
+**Sample Avatar Image Placeholder:**
+
+![Sample Avatar](https://via.placeholder.com/300x300.png?text=Avatar+Preview)
 
 ---
 
 ## 🛠️ Tech Stack
 
-* 🐍 Python 3.x
-* 📦 `requests` library
-* 🌐 Cross-platform
+- Python 3.x
+- `requests` library
+- Roblox platform
 
 ---
 
 ## 📦 Installation
 
 ```bash
-# Clone this repository
+# Clone the repository
 git clone https://github.com/yourusername/roblox-avatar-automation.git
 cd roblox-avatar-automation
 
 # Install dependencies
 pip install requests
-```
 
----
+🔑 Setup
+Step 1 — Get Your Roblox Cookie
 
-## 🔑 Setup
+    Open Roblox and log in.
 
-### Step 1 — Get Your Roblox Cookie
+    Press F12 (Developer Tools) → Network tab.
 
-1. Open Roblox and log in.
-2. Press **F12** → **Network** tab.
-3. Refresh the page and click any request to `roblox.com`.
-4. Under **Request Headers**, find:
+    Refresh the page and click any request to roblox.com.
 
-```
+    Under Request Headers, find:
+
 Cookie: .ROBLOSECURITY=YOUR_COOKIE_HERE
-```
 
-5. Copy everything after `=`.
-6. Create a file called `cookie.txt` in the project root and paste your cookie.
+    Copy everything after = and save it into a file called cookie.txt in the project root.
 
-⚠️ **Keep this cookie private** — leaking it can compromise your account.
+    ⚠️ Keep this cookie private — leaking it can compromise your account.
 
-### Step 2 — Configure Outfits
+Step 2 — Run the Script
 
-Edit `avatar_automation.py` and update the outfit IDs with your preferred ones. Example with clean random numbers and friendly names:
-
-```python
-OUTFITS = {
-    1012345678901234: "Chill Vibes",
-    2023456789012345: "Street Style",
-    3034567890123456: "Classic Cool",
-    4045678901234567: "Urban Explorer",
-    5056789012345678: "Night Rider",
-    6067890123456789: "Summer Breeze"
-}
-```
-
----
-
-## ▶️ Usage
-
-Run the script:
-
-```bash
 python avatar_automation.py
-```
 
-It will:
+The script will:
 
-* ✅ Log in using your cookie
-* 👕 Switch outfits randomly
-* ⏱️ Wait 1 hour before changing again
+    ✅ Log in with your cookie
 
-**Sample output:**
+    👕 Cycle through your editable outfits automatically
 
-```
-✅ Logged in as: TERMINATORR60 (UserId: 4755568233)
-✨ Wore outfit: Chill Vibes (ID: 1012345678901234)
-⏳ Waiting 1 hour...
-✨ Wore outfit: Street Style (ID: 2023456789012345)
-⏳ Waiting 1 hour...
-```
+    ⚠️ Skip any outfits that cannot be worn and log them in failed_outfits.log
 
----
+    ⏳ Wait 10 minutes before changing to the next outfit
 
-## ⏱️ Notes
+Step 3 — Optional Configuration
 
-* Default interval: **1 hour** (`time.sleep(3600)`)
-* Adjust interval for faster or slower outfit changes
-* For automation:
+    Change the interval in the script by modifying:
 
-  * 🗓️ Windows Task Scheduler
-  * ⏰ Cron jobs on Linux/macOS
+time.sleep(600)  # Interval in seconds (600 = 10 minutes)
 
----
+    Check failed_outfits.log to remove problematic outfits from rotation.
 
-## 🎨 Customization
+🎨 Customization
 
-* Add or remove outfit IDs
-* Adjust interval timing
-* Extend with features like:
+    Add or remove outfits by editing OUTFITS dictionary (optional if using auto-fetch)
 
-  * 🎲 Randomizer
-  * 📋 Alerts or logs
-  * 📸 Avatar screenshots
+    Extend with more features like random order, notifications, or web UI integration
 
----
-
-## 🤝 Contributing
+🤝 Contributing
 
 Contributions are welcome!
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature-name`
-3. Commit and push your changes
-4. Open a pull request
+    Fork this repository
 
----
+    Create a feature branch (git checkout -b feature-name)
 
-✨ Stay stylish automatically! ✨
+    Commit your changes (git commit -m 'Add feature')
+
+    Push to the branch (git push origin feature-name)
+
+    Open a pull request

@@ -1,9 +1,8 @@
 # 🎭 Roblox Avatar Automation
 
-[![Python](https://img.shields.io/badge/Python-3.x-blue.svg?logo=python)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.13-blue.svg?logo=python)](https://www.python.org/)
 [![Requests](https://img.shields.io/badge/Library-requests-green.svg)](https://pypi.org/project/requests/)
 [![Roblox](https://img.shields.io/badge/Platform-Roblox-red.svg?logo=roblox)](https://www.roblox.com)
-[![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
 
 Automatically cycle through your Roblox outfits using Python.  
 This script changes your avatar every hour so you always look fresh without lifting a finger.

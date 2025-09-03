@@ -1,6 +1,6 @@
 # 🎭 Roblox Avatar Automation
 
-[![Python](https://img.shields.io/badge/Python-3.x-blue.svg?logo=python)](https://www.python.org/) 
+[![Python](https://img.shields.io/badge/Python-3.13-blue.svg?logo=python)](https://www.python.org/) 
 [![Requests](https://img.shields.io/badge/Library-requests-green.svg)](https://pypi.org/project/requests/) 
 [![Roblox](https://img.shields.io/badge/Platform-Roblox-red.svg?logo=roblox)](https://www.roblox.com)
 
@@ -23,7 +23,7 @@ Automate your Roblox avatar with Python! This script **cycles through your saved
 
 **Console Output:**
 
-✅ Logged in as: TERMINATORR60 (UserId: 4755568233)
+✅ Logged in as: robloxuser (UserId: 12312312)
 ✨ Found 8 editable outfits.
 ✅ Wore outfit: Supreme (ID: 3213680585124979)
 ⚠️ Could not wear outfit 'Tokyo 10' (ID: 2721320690592434, status 404)
@@ -44,7 +44,7 @@ Tue Sep 3 13:55:18 2025 - Failed to wear: BPM Black (ID: 2719305988962447), Stat
 
 ## 🛠️ Tech Stack
 
-- Python 3.x
+- Python 3.13
 - `requests` library
 - Roblox platform
 

@@ -10,12 +10,11 @@ HEADERS = {
     "Cookie": f".ROBLOSECURITY={COOKIE}"
 }
 
-# Endpoints
+# Endpoint to validate cookie
 CHECK_COOKIE_URL = "https://users.roblox.com/v1/users/authenticated"
-WEAR_OUTFIT_URL = "https://avatar.roblox.com/v1/avatar/set-wearing-assets"
 
 # Outfits you want to cycle through (replace with your Outfit IDs)
-OUTFITS = [123456789, 987654321]
+OUTFITS = [ 123456, 0987654 ] 
 
 # Validate cookie
 resp = requests.get(CHECK_COOKIE_URL, headers=HEADERS)
@@ -34,10 +33,11 @@ def wear_outfit(outfit_id):
         print(f"✅ Changed outfit to {outfit_id}")
     else:
         print(f"❌ Failed to change outfit {outfit_id} (status {r.status_code})")
+        print("Response:", r.text)
 
 # Loop every hour
 while True:
     for outfit_id in OUTFITS:
         wear_outfit(outfit_id)
-        print("⏳ Waiting 1 hour...")
+        print("⏳ Waiting 1 hour...\n")
         time.sleep(3600)  # 1 hour

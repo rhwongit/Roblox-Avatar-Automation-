@@ -4,18 +4,18 @@
 [![Requests](https://img.shields.io/badge/Library-requests-green.svg)](https://pypi.org/project/requests/) 
 [![Roblox](https://img.shields.io/badge/Platform-Roblox-red.svg?logo=roblox)](https://www.roblox.com)
 
-Automate your Roblox avatar with Python! This script **cycles through your saved outfits**, handles errors automatically, and only wears outfits that are truly wearable.
+Automate your Roblox avatar with Python! This script **cycles through your saved outfits endlessly**, handles errors automatically, and only wears outfits that are truly wearable.
 
 ---
 
 ## ✨ Features
 
-- 🔐 Secure login using your `.ROBLOSECURITY` cookie
-- 👕 Automatically cycle through editable outfits
-- ⚡ Skips outfits that fail to wear and logs failures
-- 📄 Generates `failed_outfits.log` with all outfits that couldn’t be worn
-- ⏱️ Adjustable interval (default: 10 minutes)
-- 💻 Cross-platform: Windows, Linux, macOS
+- 🔐 Secure login using your `.ROBLOSECURITY` cookie  
+- 👕 Automatically cycles through **editable outfits**  
+- ⚡ Skips outfits that fail to wear and logs failures  
+- 📄 Generates `failed_outfits.log` with outfits that could not be worn  
+- ⏱️ Adjustable interval (default: 10 minutes)  
+- 💻 Cross-platform: Windows, Linux, macOS  
 
 ---
 
@@ -23,8 +23,8 @@ Automate your Roblox avatar with Python! This script **cycles through your saved
 
 **Console Output:**
 
-✅ Logged in as: robloxuser (UserId: 12312312)
-✨ Found 8 editable outfits.
+✅ Logged in as: RobloxUser (UserId: 1212321232)
+✨ Found 8 editable outfits. Starting cycle...
 ✅ Wore outfit: Supreme (ID: 3213680585124979)
 ⚠️ Could not wear outfit 'Tokyo 10' (ID: 2721320690592434, status 404)
 ⏳ Waiting 10 minutes before next outfit...
@@ -36,7 +36,7 @@ Tue Sep 3 13:45:12 2025 - Failed to wear: Tokyo 10 (ID: 2721320690592434), Statu
 Tue Sep 3 13:55:18 2025 - Failed to wear: BPM Black (ID: 2719305988962447), Status: 404
 
 
-**Sample Avatar Image Placeholder:**
+**Sample Avatar Preview Placeholder:**
 
 ![Sample Avatar](https://via.placeholder.com/300x300.png?text=Avatar+Preview)
 
@@ -44,9 +44,9 @@ Tue Sep 3 13:55:18 2025 - Failed to wear: BPM Black (ID: 2719305988962447), Stat
 
 ## 🛠️ Tech Stack
 
-- Python 3.13
-- `requests` library
-- Roblox platform
+- Python 3.13.7  
+- `requests` library  
+- Roblox platform  
 
 ---
 
@@ -85,15 +85,15 @@ The script will:
 
     ✅ Log in with your cookie
 
-    👕 Cycle through your editable outfits automatically
+    👕 Cycle endlessly through your editable outfits
 
-    ⚠️ Skip any outfits that cannot be worn and log them in failed_outfits.log
+    ⚠️ Skip outfits that cannot be worn and log them in failed_outfits.log
 
     ⏳ Wait 10 minutes before changing to the next outfit
 
 Step 3 — Optional Configuration
 
-    Change the interval in the script by modifying:
+    Change the interval by modifying:
 
 time.sleep(600)  # Interval in seconds (600 = 10 minutes)
 
@@ -118,3 +118,5 @@ Contributions are welcome!
     Push to the branch (git push origin feature-name)
 
     Open a pull request
+
+✨ Stay stylish and automated, endlessly! ✨

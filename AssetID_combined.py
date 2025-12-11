@@ -2,7 +2,7 @@ import requests
 import json
 
 # -----------------------------
-# 1️⃣ Load ROBLOSECURITY Cookie
+# Load ROBLOSECURITY Cookie
 # -----------------------------
 with open("cookie.txt", "r") as f:
     COOKIE = f.read().strip()
@@ -17,35 +17,35 @@ token_req = requests.post("https://auth.roblox.com/v1/logout", headers=HEADERS)
 HEADERS["X-CSRF-TOKEN"] = token_req.headers.get("x-csrf-token")
 
 # -----------------------------
-# 2️⃣ Get authenticated user
+# Get authenticated user
 # -----------------------------
 resp = requests.get("https://users.roblox.com/v1/users/authenticated", headers=HEADERS)
 if resp.status_code != 200:
-    print("❌ Invalid cookie. Please update cookie.txt")
+    print("Invalid cookie. Please update cookie.txt")
     exit()
 
 user = resp.json()
-print(f"✅ Logged in as: {user['name']} (UserId: {user['id']})")
+print(f" Logged in as: {user['name']} (UserId: {user['id']})")
 
 # -----------------------------
-# 3️⃣ User chooses avatar type
+# User chooses avatar type
 # -----------------------------
 choice = input("Which avatar type to fetch? (R6 / R15 / Both): ").strip().upper()
 if choice not in ["R6", "R15", "BOTH"]:
-    print("❌ Invalid choice.")
+    print("Invalid choice.")
     exit()
 
 fetch_r6 = choice in ["R6", "BOTH"]
 fetch_r15 = choice in ["R15", "BOTH"]
 
 # -----------------------------
-# 4️⃣ Fetch all editable outfits
+# Fetch all editable outfits
 # -----------------------------
 outfits_url = f"https://avatar.roblox.com/v1/users/{user['id']}/outfits?itemsPerPage=50"
 resp = requests.get(outfits_url, headers=HEADERS)
 
 if resp.status_code != 200:
-    print("❌ Failed to fetch outfits:", resp.status_code, resp.text)
+    print("Failed to fetch outfits:", resp.status_code, resp.text)
     exit()
 
 outfits_data = resp.json().get("data", [])
@@ -65,7 +65,7 @@ for outfit in outfits_data:
     details_resp = requests.get(details_url, headers=HEADERS)
 
     if details_resp.status_code != 200:
-        print(f"⚠️ Could not fetch details for outfit '{outfit_name}'")
+        print(f"Could not fetch details for outfit '{outfit_name}'")
         continue
 
     details = details_resp.json()
@@ -88,7 +88,7 @@ for outfit in outfits_data:
         }
 
 # -----------------------------
-# 5️⃣ Save outfits to JSON/TXT
+# Save outfits to JSON/TXT
 # -----------------------------
 if fetch_r6:
     with open("outfits_r6.json", "w", encoding="utf-8") as f:
@@ -100,7 +100,7 @@ if fetch_r6:
             f.write(f"  AvatarType: {data['avatarType']}\n")
             f.write(f"  BodyColors: {data['bodyColors']}\n")
             f.write("-"*40 + "\n")
-    print(f"✅ Saved {len(saved_outfits_r6)} R6 outfits to outfits_r6.json / .txt")
+    print(f"Saved {len(saved_outfits_r6)} R6 outfits to outfits_r6.json / .txt")
 
 if fetch_r15:
     with open("outfits_r15.json", "w", encoding="utf-8") as f:
@@ -112,4 +112,4 @@ if fetch_r15:
             f.write(f"  AvatarType: {data['avatarType']}\n")
             f.write(f"  BodyColors: {data['bodyColors']}\n")
             f.write("-"*40 + "\n")
-    print(f"✅ Saved {len(saved_outfits_r15)} R15 outfits to outfits_r15.json / .txt")
+    print(f"Saved {len(saved_outfits_r15)} R15 outfits to outfits_r15.json / .txt")
